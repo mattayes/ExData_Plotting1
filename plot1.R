@@ -1,3 +1,6 @@
+## Required packages
+library(lubridate)
+
 ## Download data
 if(!file.exists("./data")){
 	dir.create("./data")

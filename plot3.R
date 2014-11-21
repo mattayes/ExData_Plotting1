@@ -1,3 +1,6 @@
+## Required packages
+library(lubridate)
+
 ## Download data
 if(!file.exists("./data")){
   dir.create("./data")
@@ -17,7 +20,6 @@ epc <- read.table("./data/epc.txt", sep = ";", skip = 66637, nrows = 2880,
                                  "Sub_metering_2", "sub_metering_3"))
 
 ## Create new datetime variable and remove date/time
-library(lubridate)
 epc$datetime <- with(epc, paste(Date, Time))
 epc$datetime <- dmy_hms(epc$datetime)
 epc$Date <- NULL
